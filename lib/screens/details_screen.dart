@@ -24,7 +24,7 @@ class DetailsScreen extends StatelessWidget {
 }
 
 class _CustomAppBar extends StatelessWidget {
-  const _CustomAppBar({super.key});
+  const _CustomAppBar();
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _CustomAppBar extends StatelessWidget {
 }
 
 class _PosterAndTitle extends StatelessWidget {
-  const _PosterAndTitle({super.key});
+  const _PosterAndTitle();
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +106,7 @@ class _PosterAndTitle extends StatelessWidget {
 }
 
 class _Overview extends StatelessWidget {
-  const _Overview({super.key});
+  const _Overview();
 
   @override
   Widget build(BuildContext context) {

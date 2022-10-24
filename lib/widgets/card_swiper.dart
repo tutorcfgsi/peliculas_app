@@ -8,7 +8,7 @@ class CardSwiper extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return Container(
+    return SizedBox(
         // Diremos que use todo el ancho posible basado en el padre (la columna)
         width: double.infinity,
         height: size.height * 0.5,
