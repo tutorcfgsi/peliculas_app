@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peliculas_app/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
@@ -7,17 +8,22 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // El ? primero es porque puede que no recibamos ese argumento (nulo)ç
     // Y los ?? es por si es nulo, que le ponga el valor 'no-movie'
+
     final String movie =
         ModalRoute.of(context)?.settings.arguments.toString() ?? 'no-movie';
+    // return const Text('Hola');
     return Scaffold(
         body: CustomScrollView(
       slivers: [
         const _CustomAppBar(),
         SliverList(
-            delegate: SliverChildListDelegate([const _PosterAndTitle()])),
-        const _Overview(),
-        const _Overview(),
-        const _Overview()
+            delegate: SliverChildListDelegate([
+          const _PosterAndTitle(),
+          const _Overview(),
+          const _Overview(),
+          const _Overview(),
+          const CastingCards()
+        ]))
       ],
     ));
   }
@@ -39,6 +45,7 @@ class _CustomAppBar extends StatelessWidget {
         title: Container(
             width: double.infinity,
             alignment: Alignment.bottomCenter,
+            padding: const EdgeInsets.only(bottom: 10),
             color: Colors
                 .black12, // Esto le pone a la imagen un color negro transparente
             child: const Text(
@@ -47,7 +54,7 @@ class _CustomAppBar extends StatelessWidget {
             )),
         background: const FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
-          image: NetworkImage('https://via.placeholder.com/500x300'),
+          image: AssetImage('assets/no-image.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -71,7 +78,7 @@ class _PosterAndTitle extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: const FadeInImage(
               placeholder: AssetImage('assets/no-image.jpg'),
-              image: NetworkImage('https://via.placeholder.com/200x300'),
+              image: AssetImage('assets/no-image.jpg'),
               height: 150,
             ),
           ),
