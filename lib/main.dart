@@ -12,9 +12,9 @@ class AppState extends StatelessWidget {
   Widget build(BuildContext context) {
     // Vamos a usar un Widget de tipo MultiProvider porque si tenemos más de 1
     //  podemos añadirlo al array que vamos a crear
-    return MultiProvider(
-        providers: [ChangeNotifierProvider(create: (_) => MoviesProvider())],
-        child: const MyApp());
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) => MoviesProvider(), lazy: false)
+    ], child: const MyApp());
   }
 }
 
