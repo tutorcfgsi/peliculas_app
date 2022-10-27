@@ -15,8 +15,8 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
           actions: [
             IconButton(
-              onPressed: () {},
               icon: const Icon(Icons.search_outlined),
+              onPressed: () {},
             )
           ],
         ),

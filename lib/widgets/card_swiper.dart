@@ -22,7 +22,7 @@ class CardSwiper extends StatelessWidget {
           itemHeight: size.height * 0.4,
           itemBuilder: (_, int index) {
             final movie = movies[index];
-
+            print(movie.fullPosterImg);
             return GestureDetector(
               onTap: () => Navigator.pushNamed(context, 'details',
                   arguments: 'movie-instance'),
@@ -30,7 +30,7 @@ class CardSwiper extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 child: FadeInImage(
                   placeholder: const AssetImage('assets/no-image.jpg'),
-                  image: movie.fullPosterImg,
+                  image: NetworkImage(movie.fullPosterImg),
                   fit: BoxFit.cover,
                 ),
               ),

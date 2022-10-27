@@ -35,7 +35,7 @@ class Movie {
 
   get fullPosterImg {
     if (posterPath != null) {
-      return 'https://image.tmdb.org/t/p/w500${this.posterPath}';
+      return 'https://image.tmdb.org/t/p/w500$posterPath';
     }
     return 'https://i.stack.imgur.com/GNhxO.png';
   }

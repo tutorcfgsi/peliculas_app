@@ -33,7 +33,7 @@ class _CastCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: const FadeInImage(
               placeholder: AssetImage('assets/no-image.jpg'),
-              image: NetworkImage('https://via.placeholder.com/150x300'),
+              image: AssetImage('assets/no-image.jpg'),
               height: 140,
               width: 100,
               fit: BoxFit.cover,
